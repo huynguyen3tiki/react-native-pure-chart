@@ -162,12 +162,14 @@ export default class ColumnChart extends Component {
 
       let seriesCount = this.state.sortedData.length;
       let plusGap = 10 * seriesCount;
-      if (this.state.sortedData.length === 1) {
-        plusGap = 0;
+
+      if (selectedIndex === 0) {
+        plusGap = 20;
       } else if (selectedIndex === standardSeries.data.length - 1) {
-        plusGap = -50;
+        plusGap = -35;
+      } else if (this.state.sortedData.length === 1) {
+        plusGap = 0;
       }
-      // 차트 width를 마지막에 늘려야겠음.
 
       let left = standardSeries.data[selectedIndex]["gap"] + plusGap;
       let tooltipRenders = [];
