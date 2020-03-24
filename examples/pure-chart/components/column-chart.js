@@ -208,7 +208,7 @@ export default class ColumnChart extends Component {
         );
       }
       return (
-        <View style={[styles.tooltipWrapper, { left: left, top : -50 }]}>
+        <View style={[styles.tooltipWrapper, { left: left }]}>
           <View style={styles.tooltip}>{tooltipRenders}</View>
         </View>
       );
@@ -304,9 +304,10 @@ const styles = StyleSheet.create({
   },
   tooltipWrapper: {
     position: "absolute",
-    height: "100%",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    height:35,
+    top : 5
   },
   tooltip: {
     backgroundColor: "#FFFFFF",
@@ -316,7 +317,7 @@ const styles = StyleSheet.create({
     padding: 3,
     alignItems: "center",
     justifyContent: "center",
-    opacity: 0.8
+    opacity: 0.8,
   },
   tooltipTitle: { fontSize: 10 },
   tooltipValue: { fontWeight: "bold", fontSize: 15 },
