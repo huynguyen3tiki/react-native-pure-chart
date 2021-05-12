@@ -271,7 +271,7 @@ export default class ColumnChart extends Component {
                   )}
               </View>
             </View>
-            {this.drawTooltip(this.state.selectedIndex)}
+            {this.props.showTooltips && this.drawTooltip(this.state.selectedIndex)}
           </ScrollView>
         </View>
       </View>
@@ -282,24 +282,23 @@ export default class ColumnChart extends Component {
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: "row",
-    overflow: "hidden"
+    overflow: "hidden",
   },
   mainContainer: {
     paddingBottom: 0,
     paddingLeft: 0,
     paddingRight: 0,
-    height: "100%"
+    height: "100%",
   },
   chartContainer: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
     margin: 0,
-    paddingRight: 10,
-    overflow: "hidden"
+    overflow: "hidden",
   },
   chartView: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
     height: "100%"
   },
   tooltipWrapper: {
@@ -336,14 +335,15 @@ ColumnChart.defaultProps = {
   data: [],
   height: 100,
   defaultColumnWidth: 40,
-  defaultColumnMargin: 20,
+  defaultColumnMargin: 0,
   defaultBorderColor: "#FFFFFF",
-  primaryColor: "#297AB1",
-  highlightColor: "red",
+  primaryColor: "#DBEEFF",
+  highlightColor: "#5CB3FF",
   showEvenNumberXaxisLabel: true,
   initialScrollPosition: { x: 0, y: 0, animated: true },
   initialScrollTimeOut: 300,
   showYAxisLabel: true,
   showXAxisLabel: true,
-  yAxisSymbol: ""
+  yAxisSymbol: "",
+  showTooltips: false
 };
