@@ -116,6 +116,7 @@ export default class ColumnChart extends Component {
             isSelected={this.state.selectedIndex === i}
             highlightColor={this.props.highlightColor}
             onClick={evt => this.handleClick(evt, i)}
+            primaryColor={this.props.primaryColor}
           />
         );
       }
