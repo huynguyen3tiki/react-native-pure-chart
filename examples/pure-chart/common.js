@@ -199,15 +199,15 @@ export const getGuideArray = (max, height, numberOfPoints = 5) => {
     x = Math.round(x * 10);
     temp = 1;
   } else if (x >= 1000 && x < 1000000) {
-    postfix = "K";
+    postfix = ".k";
     x = Math.round(x / 100);
     temp = 1000;
   } else if (x >= 1000000 && x < 1000000000) {
-    postfix = "M";
+    postfix = " tr";
     x = Math.round(x / 100000);
     temp = 1000000;
   } else {
-    postfix = "B";
+    postfix = " tỉ";
     x = Math.round(x / 100000000);
     temp = 1000000000;
   }

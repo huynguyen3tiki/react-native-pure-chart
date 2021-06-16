@@ -261,7 +261,7 @@ export default class ColumnChart extends Component {
                 {this.renderColumns(fadeAnim)}
               </View>
               {!hiddenXAxis && drawXAxis(this.props.xAxisColor)}
-              <View style={{ marginLeft: this.props.defaultColumnWidth / 2 }}>
+              <View style={{ marginLeft: this.props.defaultColumnWidth / 2, marginTop: 12, marginBottom:14 }}>
                 {this.props.showXAxisLabel &&
                   drawXAxisLabels(
                     this.state.sortedData[0].data,
