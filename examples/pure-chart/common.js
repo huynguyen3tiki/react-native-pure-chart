@@ -262,13 +262,13 @@ export const drawYAxisLabels = (
   return (
     <View
       style={{
-        width: 33 + 5 * symbol.length,
+        width: 48 + 5 * symbol.length,
         height: height,
         justifyContent: "flex-end",
         alignItems: "flex-end",
         marginBottom:
           minValue && arr && arr.length > 0 ? -1 * arr[0][2] * minValue : null,
-        overflow: "hidden"
+        overflow: "hidden",
       }}
     >
       {arr.length === 0 ? (
@@ -292,7 +292,8 @@ export const drawYAxisLabels = (
                 position: "absolute"
               }}
             >
-              <Text style={{ fontSize: 11, color: color }}>
+              <Text style={{ fontSize: 10, color: '#515158', fontFamily: 'Inter',
+fontWeight: '500' }}>
                 {v[0] + " " + symbol}
               </Text>
             </View>
