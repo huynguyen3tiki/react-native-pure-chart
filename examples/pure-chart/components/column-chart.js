@@ -268,7 +268,9 @@ export default class ColumnChart extends Component {
                     this.state.gap,
                     this.props.labelColor,
                     this.props.showEvenNumberXaxisLabel,
-                    this.props.showAllLabel
+                    this.props.showAllLabel,
+                    this.state.selectedIndex,
+                    this.props.xLabelHighLightColor
                   )}
               </View>
             </View>

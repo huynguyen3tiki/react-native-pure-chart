@@ -364,7 +364,9 @@ export const drawXAxisLabels = (
   gap,
   color = "#000000",
   showEvenNumberXaxisLabel,
-  showAllLabel = false
+  showAllLabel = false,
+  selectedIndex,
+  highlightColor
 ) => {
   return (
     <View
@@ -375,7 +377,10 @@ export const drawXAxisLabels = (
       }}
     >
       {sortedData.map((data, i) => {
-        
+        const currentColor = selectedIndex === i ? highlightColor : color;
+        console.log("selectedIndex",selectedIndex)
+        console.log("selectedIndex xxxx",currentColor)
+
         if (showAllLabel) {
           return (
             <View
@@ -388,7 +393,8 @@ export const drawXAxisLabels = (
                 alignItems: "center"
               }}
             >
-              <Text style={{ fontSize: 9, color: color }}>
+              <Text style={{ color: currentColor, fontWeight: '500',
+                fontSize: 10  }}>
                 {
                   // data[3]
                   data["x"]
@@ -397,8 +403,7 @@ export const drawXAxisLabels = (
             </View>
           );
         }
-
-        // if (data[3] && i % 2 === 1) {
+        
         if ((data["x"] && i % 2 === 1) || !showEvenNumberXaxisLabel) {
           return (
             <View
@@ -411,7 +416,8 @@ export const drawXAxisLabels = (
                 alignItems: "center"
               }}
             >
-              <Text style={{ fontSize: 9, color: color }}>
+              <Text style={{ color: currentColor, fontWeight: '500',
+                fontSize: 10 }}>
                 {
                   // data[3]
                   data["x"]
